@@ -1,0 +1,14 @@
+1) define actions in action file
+2) these actions will be handled by reducer in reducer file
+3) combine all reducers in rooteducer file because we can have only one rootreducer so we combine 
+   all reducers in one rootreducer.
+4) now make a store in store file and add this rootreducer into this store.
+5) wrap the App component with Provider tag and pass it store as a props
+   example 
+	 <Provider store={store}>
+  	  <App />
+         </Provider>
+6) now select that reducer with useSelector and call the function with useDispatch in any component
+   as per your requirement.
+7) import both usedispatch and action function in every component where you want to create any action
+8) call dispatch function with parameter that action function call.
