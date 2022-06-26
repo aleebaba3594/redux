@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# theory about redux
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Redux is a predictable state container for JavaScript apps.
+- It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test.
+- You can use Redux together with React, or with any other view library. It is tiny (2kB, including dependencies), 
+but has a large ecosystem of addons available.
+- Redux itself is a standalone library that can be used with any UI layer or framework, including React, Angular,
+Vue, Ember, and vanilla JS
+- Although Redux and React are commonly used together, they are independent of each other.
+- If you are using Redux with any kind of UI framework, you will normally use a "UI binding" library to tie Redux
+together with your UI framework, rather than directly interacting with the store from your UI code.
+- React Redux is the official Redux UI binding library for React. If you are using Redux and React together,
+you should also use React Redux to bind these two libraries.
+- Redux is a pattern and library for managing and updating application state, using events called "actions".
 
-## Available Scripts
+# keypoints to use redux 
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  - ### define actions in action file
+ - ### these actions will be handled by reducer in reducer file
+- ### combine all reducers in rooteducer file because we can have only one rootreducer so we combine all reducers in one rootreducer.
+- ### now make a store in store file and add this rootreducer into this store.
+- ### wrap the App component with Provider tag and pass it store as a props
+  - example 
+	 Provider store={store}
+  	  App 
+         Provider 
+    - where provider is open and close tag wrapping the App component)
+- ### now select that reducer with useSelector and call the function with useDispatch in any component as per your requirement.
+- ### import both usedispatch and action function in every component where you want to create any action
+- ### call dispatch function with parameter that action function call.
